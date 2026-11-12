@@ -1,0 +1,14 @@
+id: ssh-bruteforce-001
+title: SSH brute force from a single source
+description: Many failed SSH logins from the same IP within a short window.
+level: high
+tags: [attack.credential_access, attack.t1110.001]
+detection:
+  failed:
+    service: sshd
+    outcome: failure
+  condition: failed
+correlation:
+  group_by: [src_ip]
+  threshold: 5
+  window_seconds: 60

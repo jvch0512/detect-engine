@@ -1,0 +1,11 @@
+id: win-admin-add-001
+title: User added to local Administrators group
+description: Persistence or privilege escalation via group membership change.
+level: medium
+tags: [attack.persistence, attack.t1098, attack.privilege_escalation]
+detection:
+  event:
+    event_id: 4732
+  group:
+    group_name: Administrators
+  condition: event and group

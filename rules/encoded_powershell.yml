@@ -1,0 +1,11 @@
+id: win-ps-encoded-001
+title: PowerShell with encoded command
+description: powershell.exe launched with -enc / -EncodedCommand, common in malware loaders.
+level: high
+tags: [attack.execution, attack.t1059.001, attack.defense_evasion, attack.t1027]
+detection:
+  image:
+    process.image|endswith: \powershell.exe
+  encoded:
+    process.command_line|contains: [" -enc ", " -encodedcommand ", " -e "]
+  condition: image and encoded

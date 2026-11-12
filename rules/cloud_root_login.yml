@@ -1,0 +1,12 @@
+id: aws-root-login-001
+title: AWS root account console login
+description: Root should not be used for daily work. Any console login deserves review.
+level: high
+tags: [attack.initial_access, attack.t1078.004]
+detection:
+  login:
+    event_name: ConsoleLogin
+    user_identity.type: Root
+  success:
+    response.ConsoleLogin: Success
+  condition: login and success

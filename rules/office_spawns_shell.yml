@@ -1,0 +1,11 @@
+id: win-office-shell-001
+title: Office application spawning a shell
+description: Word, Excel or Outlook starting cmd or PowerShell, typical of malicious macros.
+level: critical
+tags: [attack.initial_access, attack.t1566.001, attack.execution, attack.t1204.002]
+detection:
+  parent:
+    process.parent_image|endswith: [\winword.exe, \excel.exe, \outlook.exe]
+  child:
+    process.image|endswith: [\cmd.exe, \powershell.exe, \wscript.exe]
+  condition: parent and child

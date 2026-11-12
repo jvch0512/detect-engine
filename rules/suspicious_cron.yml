@@ -1,0 +1,13 @@
+id: lnx-cron-persist-001
+title: Cron job downloading and executing remote content
+description: Cron entries piping curl or wget into a shell, a classic persistence trick.
+level: high
+tags: [attack.persistence, attack.t1053.003, attack.command_and_control, attack.t1105]
+detection:
+  cron:
+    process.name: crontab
+  fetch:
+    process.command_line|contains: [curl, wget]
+  pipe:
+    process.command_line|re: '\|\s*(ba)?sh'
+  condition: cron and fetch and pipe

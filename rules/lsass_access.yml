@@ -1,0 +1,13 @@
+id: win-lsass-dump-001
+title: Suspicious access to LSASS memory
+description: Non-system process opening lsass.exe with read access, used by credential dumpers.
+level: critical
+tags: [attack.credential_access, attack.t1003.001]
+detection:
+  target:
+    target.image|endswith: \lsass.exe
+  access:
+    granted_access: ["0x1010", "0x1410", "0x1fffff"]
+  trusted:
+    source.image|startswith: ["C:\\Windows\\System32\\", "C:\\Program Files\\Windows Defender\\"]
+  condition: target and access and not trusted
